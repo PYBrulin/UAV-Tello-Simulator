@@ -25,9 +25,9 @@ Unity version used for this project: **2021.3.6f1**
 
 ## Download Links
 
-- [Windows]() (and [x86]())
-- [MacOS]()
-- [Linux]()
+- [Windows](https://github.com/PYBrulin/UAV-Tello-Simulator/releases/download/v1.0.1/Win64-v1.0.1.zip) (and [x86](https://github.com/PYBrulin/UAV-Tello-Simulator/releases/download/v1.0.1/Win-v1.0.1.zip))
+- [MacOS](https://github.com/PYBrulin/UAV-Tello-Simulator/releases/download/v1.0.1/MacOS.app.zip)
+- [Linux](https://github.com/PYBrulin/UAV-Tello-Simulator/releases/download/v1.0.1/Linux-v1.0.1.zip)
 
 ## Where are the source files?
 
