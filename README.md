@@ -82,34 +82,34 @@ Most commands described in the _Tello SDK 2.0 User Guide_ are implemented for co
     - `streamon`: Enable video stream
     - `streamoff`: Disable video stream
     - `emergency`: Stop motors immediately
-    - `up`: x Ascend to “x” cm.
-    - `down`: x down “x” Descend to “x” cm.
-    - `left`: x Fly left for “x” cm.
-    - `right`: x Fly right for “x” cm.
-    - `forward`: x Fly right for “x” cm.
-    - `back`: x Fly right for “x” cm. “x” = 20-500
-    - `cw`: cw x Rotate “x” degrees clockwise.
-    - `ccw`: ccw x Rotate “x” degrees counterclockwise. “x” = 1-360
-    - `flip`: Flip in “x” direction. (“l” = left / “r” = right / “f” = forward / “b” = back)
+    - `up x`: Ascend to “x” cm.
+    - `down x`: down “x” Descend to “x” cm.
+    - `left x`: Fly left for “x” cm.
+    - `right x`: Fly right for “x” cm.
+    - `forward x`: Fly right for “x” cm.
+    - `back x`: Fly right for “x” cm. “x” = 20-500
+    - `cw x`: Rotate “x” degrees clockwise.
+    - `ccw x`: Rotate “x” degrees counterclockwise. “x” = 1-360
+    - `flip [l, r, f, b]`: Flip in “x” direction. (“l” = left / “r” = right / “f” = forward / “b” = back)
     - `stop`: Stop the drone movement instantly
-    - `go`: Fly to “x” “y” “z” at “speed” (cm/s). ( “x” = -500-500 / “y” = -500-500 / “z” = -500-500 / “speed” = 10-100). Note: “x”, “y”, and “z” values can’t be set between -20 – 20 simultaneously
-    - `curve`: Fly at a curve according to the two given coordinates of the Mission Pad ID at “speed” (cm/s). If the arc radius is not within a range of 0.5-10 meters, it will respond with an error. (“x1”, “x2” = -500-500 / “y1”, “y2” = -500-500 / “z1”, “z2” = -500-500 / “speed” = 10-60) Note: “x”, “y”, and “z” values can’t be set between -20 – 20 simultaneously
+    - `go x y z speed`: Fly to “x” “y” “z” at “speed” (cm/s). ( “x” = -500-500 / “y” = -500-500 / “z” = -500-500 / “speed” = 10-100). Note: “x”, “y”, and “z” values can’t be set between -20 – 20 simultaneously
+    - `curve x1 y1 z1 x2 y2 z2 speed`: Fly at a curve according to the two given coordinates of the Mission Pad ID at “speed” (cm/s). If the arc radius is not within a range of 0.5-10 meters, it will respond with an error. (“x1”, “x2” = -500-500 / “y1”, “y2” = -500-500 / “z1”, “z2” = -500-500 / “speed” = 10-60) Note: “x”, “y”, and “z” values can’t be set between -20 – 20 simultaneously
 
     Note: Mission pads specific commands are not implemented
 
-1.  Set Commands
+2.  Set Commands
 
-    - `speed`: Set speed to “x” cm/s.
+    - `speed x`: Set speed to “x” cm/s.
       x = 10-100
-    - `rc`: Set remote controller control via four channels.
+    - `rc a b c d`: Set remote controller control via four channels.
       (“a” = left/right (-100-100) / “b” = forward/backward (-100-100) / “c” = up/down (-100-100) / “d” = yaw (-100-100))
 
-1.  Camera Set Commands
+3.  Camera Set Commands
 
-    - `setresolution`: Sets the resolution of the video stream (low, high)
-    - `setfps`: Sets the frames per second of the video stream (low, medium, high)
+    - `setresolution [low, high]`: Sets the resolution of the video stream (low, high)
+    - `setfps [low, medium, high]`: Sets the frames per second of the video stream (low, medium, high)
 
-1.  Read commands
+4.  Read commands
 
     - `speed?`: Obtain current speed (cm/s). “x” = 10-100
     - `battery?`: Obtain current battery percentage. “x” = 0-100
@@ -123,7 +123,7 @@ Most commands described in the _Tello SDK 2.0 User Guide_ are implemented for co
     - `sdk?`:Obtain the Tello SDK version. “sdk version”
     - `sn?`: Obtain the Tello serial number. “serial number"
 
-1.  Helper commands - Unrelated to Tello but useful for the simulation
+5.  Helper commands - Unrelated to Tello but useful for the simulation
     - `screenshot`: Takes a screenshot of the current view
     - `reload` and `reset`: Reset the World
 
@@ -157,7 +157,7 @@ The state packet is sent at a frequency of 10Hz and contains the following data:
 | `agy`   | the acceleration of the “y” axis.            |
 | `agz`   | the acceleration of the “x” axis.            |
 
-In addition, there is an optional _debug_ packet that we need to send in parallel to the status packet that contains more data on port `8890`. It is currently sent at 30Hz and contains the following data:
+In addition, there is an optional _debug_ packet that we need to send in parallel to the status packet that contains more data on port `8891`. It is currently sent at 30Hz and contains the following data:
 
 | _Name_    | Description                                    |
 | :-------- | :--------------------------------------------- |
@@ -190,7 +190,7 @@ The levels are defined from XML definition files available for the challenge in 
 The root object `LevelData` contains all the components necessary to define a scene:
 
 - Its `name` needed to record the best track time.
-- The `respawnPoint` where the vehicle should respawn (at the beginning of the scene or when the simulation has restarted);
+- The `respawnPoint` position where the vehicle should respawn (at the beginning of the scene or when the simulation has restarted);
 - The `startLine` of the race track;
 - The `finishLine` of the race track;
 - The `gate array` distributed in the scene. A `door` is defined by its type, its sequence index and its position in the scene;
@@ -307,12 +307,14 @@ Here is an example of a level definition to build a level:
 
 ## Recorded best times
 
-The best recorded times are saved machine wise under:
+The best recorded times are saved locally under:
 
-`C:\Users\[USER]\AppData\LocalLow\ESTACA_ISAE\Tello Simulator\save_time.csv`
+- (Windows) `%USERPROFILE%\AppData\LocalLow\ESTACA_ISAE\Tello Simulator\save_time.csv`
+- (MacOS) `~\Library\Logs\ESTACA_ISAE\Tello Simulator\save_time.csv`
+- (Linux) `~\.config\unity3d\ESTACA_ISAE\Tello Simulator\save_time.csv`
 
 You can safely delete this file if you want to reset all your recorded times.
-Do not cheat by modifying this file!
+_Don't cheat by editing this file!_
 
 ## Contact
 
