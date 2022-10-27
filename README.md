@@ -65,7 +65,17 @@ To better understand the difference here is the same diagram when communicating 
 
 The environment has been created to act as a standalone _Tello_ capable of responding to most of the _Tello_ commands defined in its SDK. Thus, to control the _simulated_ Tello drone, you need to use a library capable of controlling a _Tello_ drone:
 
-- [My fork of the DJITelloPy python interface](https://github.com/PYBrulin/DJITelloPy) that takes into account the modifications needed to work with the simulator, originally written by [damiafuentes](https://github.com/damiafuentes/DJITelloPy);
+- [My fork of the DJITelloPy python interface](https://github.com/PYBrulin/DJITelloPy) that takes into account the modifications needed to work with the simulator, originally written by [damiafuentes](https://github.com/damiafuentes/DJITelloPy). To use this fork in your challenge code you either need to import it directly into your source files, or install it locally as a python package, to do so use the following commands:
+
+        git clone https://github.com/PYBrulin/DJITelloPy.git
+        cd DJITelloPy
+        pip install -e .
+
+  When you will need interact with a physical _Tello_, you'll need to use the original/official branch. You will simply need to uninstall and reinstall the package from PyPi:
+
+        pip uninstall djitellopy
+        pip install djitellopy
+
 - A [Matlab/Simulink control implementation](https://gitlab.isae-supaero.fr/l.ribeiro-lustosa/isae-group-drone) which uses this simulator;
 
 (Adapting an existing Tello interface for use with this simulator is relatively straight forward since only the response port needs to be modified.)
@@ -305,7 +315,7 @@ Here is an example of a level definition to build a level:
 
 <!-- TODO : Add a Python script to generate the levels -->
 
-## Recorded best times
+## Best recorded times
 
 The best recorded times are saved locally under:
 
