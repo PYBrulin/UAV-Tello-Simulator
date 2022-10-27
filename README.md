@@ -313,7 +313,7 @@ Here is an example of a level definition to build a level:
 </LevelData>
 ```
 
-<!-- TODO : Add a Python script to generate the levels -->
+To generate a new level, you can use the Python script `level_builder.py` available in this repository to generate new challenges more easily.
 
 ## Best recorded times
 
