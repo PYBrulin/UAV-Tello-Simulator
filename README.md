@@ -41,7 +41,7 @@ It is expected that the source code will be released once the assets have been r
 
 [Link to the challenge rules](https://websites.isae-supaero.fr/IMG/pdf/reglement_challenge_drone_2022-v2.pdf)
 
-> The objective of the challenge will be to complete a drone race course completely autonomously (without the help of a pilot). The programming will be done in Python language. This course will be delimited by gates of several types (see photos below). Each gate will be marked with an ArUco marker (documentation of the ArUco library in [C++](https://docs.google.com/document/d/1QU9KoBtjSM2kF6ITOjQ76xqL7H0TEtXriJX5kwi9Kgc/edit) and [Python](https://mecaruco2.readthedocs.io/en/latest/notebooks_rst/Aruco/aruco_basics.html)). Each passage will be timed by the Chronodrone measurement system.
+> The objective of the challenge will be to complete a drone race course completely autonomously (without the help of a pilot). The programming will be done in Python language. This course will be delimited by gates of several types. Each gate will be marked with an ArUco marker (documentation of the ArUco library in [C++](https://docs.google.com/document/d/1QU9KoBtjSM2kF6ITOjQ76xqL7H0TEtXriJX5kwi9Kgc/edit) and [Python](https://mecaruco2.readthedocs.io/en/latest/notebooks_rst/Aruco/aruco_basics.html)). Each passage will be timed by the Chronodrone measurement system.
 >
 > A ranking of the teams by time of completion of the entire course will be established. The teams will know the circuit only on the day of the event, it will be up to them to make a code that can cover different types of course. However, there will be no gates higher than 5m and no turns higher than 90 degrees.
 
