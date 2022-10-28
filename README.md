@@ -1,27 +1,27 @@
 # Tello UAV Simulator
 
-<img align="right" width="200" height="200" src=".github/imgs/ChallengeDroneISAE2022Logo.png">
-
 Small Racing UAV Simulator made for the _ISAE Drone Challenge 2022_
 
+Unity version used for this project: **2021.3.6f1**
+
+![](.github/imgs/TelloSim.jpg)
+
 ## Table of Contents
+
+<img align="right" width="200" height="200" src=".github/imgs/ChallengeDroneISAE2022Logo.png">
 
 - [Table of Contents](#table-of-contents)
 - [Download Links](#download-links)
 - [Where are the source files?](#where-are-the-source-files)
+- [Description of the Challenge Drone ISAE 2022](#description-of-the-challenge-drone-isae-2022)
 - [Network communication](#network-communication)
 - [How to control the Tello](#how-to-control-the-tello)
 - [SDK Control](#sdk-control)
 - [Data Reception](#data-reception)
 - [Manual Control](#manual-control)
 - [Creating new levels](#creating-new-levels)
-- [Recorded best times](#recorded-best-times)
+- [Best recorded times](#best-recorded-times)
 - [Contact](#contact)
-
-![](.github/imgs/challenge_drone_ISAE_2022.png)
-![](.github/imgs/TelloSim.jpg)
-
-Unity version used for this project: **2021.3.6f1**
 
 ## Download Links
 
@@ -34,6 +34,16 @@ Unity version used for this project: **2021.3.6f1**
 Since this simulation uses paid/licensed resources (the drone model and the gym, mainly), the release of the source code is naturally restricted. This is also the reason why this repository does not currently display any licenses for the available files.
 
 It is expected that the source code will be released once the assets have been replaced and that it will be under a permissive license.
+
+## Description of the Challenge Drone ISAE 2022
+
+![](.github/imgs/challenge_drone_ISAE_2022.png)
+
+[Link to the challenge rules](https://websites.isae-supaero.fr/IMG/pdf/reglement_challenge_drone_2022-v2.pdf)
+
+> The objective of the challenge will be to complete a drone race course completely autonomously (without the help of a pilot). The programming will be done in Python language. This course will be delimited by gates of several types (see photos below). Each gate will be marked with an ArUco marker (documentation of the ArUco library in [C++](https://docs.google.com/document/d/1QU9KoBtjSM2kF6ITOjQ76xqL7H0TEtXriJX5kwi9Kgc/edit) and [Python](https://mecaruco2.readthedocs.io/en/latest/notebooks_rst/Aruco/aruco_basics.html)). Each passage will be timed by the Chronodrone measurement system.
+>
+> A ranking of the teams by time of completion of the entire course will be established. The teams will know the circuit only on the day of the event, it will be up to them to make a code that can cover different types of course. However, there will be no gates higher than 5m and no turns higher than 90 degrees.
 
 ## Network communication
 
@@ -313,7 +323,7 @@ Here is an example of a level definition to build a level:
 </LevelData>
 ```
 
-To generate a new level, you can use the Python script `level_builder.py` available in this repository to generate new challenges more easily.
+To generate a new level, you can use the Python script `challenge_builder.py` available in this repository to generate new challenges more easily.
 
 ## Best recorded times
 
